@@ -3,22 +3,7 @@ import * as PortHandler from "lib/PortHandler.js";
 /** @param {NS} ns **/
 export async function main(ns) {
 	ns.disableLog("ALL");
-	if (ns.args[0] == "target") {
-		ns.tprint(getTarget(ns));
-		ns.exit();
-	}
-	if (ns.args[0] == "targetlist") {
-		ns.tprint(getTargetList(ns));
-		ns.exit();
-	}
-	if (ns.args[0] == "allservobj") {
-		ns.tprint(getServerObjList(ns));
-		ns.exit();
-	}
-	if (ns.args[0] == "bestexpserver") {
-		ns.tprint(getServerObjList(ns).sort((a,b) => b.exp - a.exp)[0]);
-		ns.exit();
-	}
+
 	
 }
 var ramneed = 2.65;

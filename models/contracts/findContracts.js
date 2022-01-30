@@ -1,4 +1,4 @@
-import {getServerList} from "lib/ServerList.js";
+import {getServerList} from "/models/server/ServerList.js";
 /** @param {NS} ns **/
 export async function main(ns) {
 	if (ns.args[0] == "info") {

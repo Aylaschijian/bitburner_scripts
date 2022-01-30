@@ -1,16 +1,17 @@
-import {getSubarrayWithMaximumSum} from "/contracts/SubarrayWithMaximumSum/solver.js"
-import {getLargestPrimeFactor} from "/contracts/FindLargestPrimeFactor/solver.js"
-import {NumberOfways} from "/contracts/TotalWaystoSum/solver.js"
-import {arrayJumpingGame} from "/contracts/ArrayJumpingGame/solve.js"
-import {algorithmicStockTraderI, algorithmicStockTraderII, algorithmicStockTraderIII, algorithmicStockTraderIV } from "contracts/AlgTrading/solve.js"
-import {uniquePathsInAGridI, uniquePathsInAGridII} from "/contracts/UniqPaths/solver.js"
-import {generateIpAddresses} from "/contracts/GenerateIPAddresses/solver.js"
-import {findValidMathExpressions} from "/contracts/FindAllValidMathExpressions/solver.js"
-import {getSingleObject} from "/contracts/findContracts.js"
-import {spiralizeMatrix} from "/contracts/SpiralizeMatrix/solve.js"
-import {minimumPathSumInATriangle} from "/contracts/MinimumPathSuminaTriangle/solve.js"
-import {sanitizeParenthesesInExpression} from "/contracts/SanitizeParenthesesinExpression/solve.js"
-import {mergeOverlappingIntervals} from "/contracts/MergeOverlappingIntervals/solve.js"
+import {getSubarrayWithMaximumSum} from "/models/contracts/SubarrayWithMaximumSum/solver.js"
+import {getLargestPrimeFactor} from "/models/contracts/FindLargestPrimeFactor/solver.js"
+import {NumberOfways} from "/models/contracts/TotalWaystoSum/solver.js"
+import {arrayJumpingGame} from "/models/contracts/ArrayJumpingGame/solve.js"
+import {algorithmicStockTraderI, algorithmicStockTraderII, algorithmicStockTraderIII, algorithmicStockTraderIV } 
+from "/modelscontracts/AlgTrading/solve.js"
+import {uniquePathsInAGridI, uniquePathsInAGridII} from "/models/contracts/UniqPaths/solver.js"
+import {generateIpAddresses} from "/models/contracts/GenerateIPAddresses/solver.js"
+import {findValidMathExpressions} from "/models/contracts/FindAllValidMathExpressions/solver.js"
+import {getSingleObject} from "/models/contracts/findContracts.js"
+import {spiralizeMatrix} from "/models/contracts/SpiralizeMatrix/solve.js"
+import {minimumPathSumInATriangle} from "/models/contracts/MinimumPathSuminaTriangle/solve.js"
+import {sanitizeParenthesesInExpression} from "/models/contracts/SanitizeParenthesesinExpression/solve.js"
+import {mergeOverlappingIntervals} from "/models/contracts/MergeOverlappingIntervals/solve.js"
 var ContractsMap = {
 	'Algorithmic Stock Trader I'	: algorithmicStockTraderI,
   	'Algorithmic Stock Trader II'	: algorithmicStockTraderII,
@@ -35,9 +36,9 @@ export async function main(ns) {
 		ns.tprint(getSingleObject(ns))
 		ns.exit()
 	} 
-	solveTaks(ns);
+	solve(ns);
 }
-function solveTaks (ns, list = getSingleObject(ns)) {
+function solve (ns, list = getSingleObject(ns)) {
 	list = list.filter (element => element.type in ContractsMap )
 	for (let task of list) {
 		var solution = ContractsMap[task.type](task.data)

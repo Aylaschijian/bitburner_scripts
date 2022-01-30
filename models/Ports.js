@@ -38,8 +38,7 @@ export function openPorts(ns, target){
 }
 export function openServerWithList(ns, list) {
 	for(let serv of list) {
-		let target = serv.hostname;
-		openServer(ns, target);
+		openServer(ns, serv);
 	}
 }
 function openServer(ns, target) {
